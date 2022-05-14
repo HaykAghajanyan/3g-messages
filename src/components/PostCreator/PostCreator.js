@@ -1,14 +1,16 @@
 import classes from './PostCreator.module.css'
 import {useState} from "react";
 import {useMessages} from "../../contexts/MessagesProvider";
+import {useUserInfo} from "../../contexts/UserProvider";
 
 const PostCreator = () => {
     const [postText, setPostText] = useState('')
+    const {user} = useUserInfo()
 
     const {sendPost} = useMessages()
 
-    const handlePostSending = () => {
-        sendPost(postText, 'Karen')
+    const handlePostSending = (name) => {
+        sendPost(postText, name)
         setPostText('')
     }
 
@@ -26,7 +28,7 @@ const PostCreator = () => {
                     className={classes.newPostArea}
                 />
             </div>
-            <button onClick={handlePostSending}>Post</button>
+            <button onClick={() => handlePostSending(user.name)}>Post</button>
         </div>
     )
 }

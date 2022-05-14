@@ -2,15 +2,23 @@
   "users": [
     {
       "id": "1",
-      "name": "Hayk"
+      "name": "Hayk",
+      "password": "1111"
     },
     {
       "id": "2",
-      "name": "Karen"
+      "name": "Karen",
+      "password": "2222"
     },
     {
       "id": "3",
-      "name": "Alex"
+      "name": "Alex",
+      "password": "3333"
+    },
+    {
+      "name": "Armen",
+      "password": "4444",
+      "id": "TMXRnDT"
     }
   ],
   "messages": [
@@ -57,40 +65,10 @@
       "text": "So, what is up with that job? Don`t reply, I know"
     },
     {
-      "author": "Alex",
+      "author": "Armen",
       "date": "07.05.2022",
-      "text": "Hello, 3g-aca!",
-      "id": "9INgTru"
-    },
-    {
-      "author": "Alex",
-      "date": "07.05.2022",
-      "text": "Test text to bootom",
-      "id": "SfnQgb_"
-    },
-    {
-      "author": "Alex",
-      "date": "07.05.2022",
-      "text": "top post from Alex!",
-      "id": "AvrxlWA"
-    },
-    {
-      "author": "Alex",
-      "date": "07.05.2022",
-      "text": "wwwwwwwwwwwwwwww",
-      "id": "Alexwwww"
-    },
-    {
-      "author": "Alex",
-      "date": "07.05.2022",
-      "text": "qwerty",
-      "id": "Alexqwer"
-    },
-    {
-      "author": "Karen",
-      "date": "07.05.2022",
-      "text": "ddssff",
-      "id": "Karenddss"
+      "text": "First post by Armen!",
+      "id": "ArmenFirs"
     }
   ]
 }

@@ -20,11 +20,3 @@ code {
   align-items: center;
 }
 
-.header {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  border-bottom: 1px solid #ccc;
-  height: 10vh;
-  align-items: center;
-}

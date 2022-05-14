@@ -1,22 +1,23 @@
+import {NavLink} from "react-router-dom";
 import classes from "./Messages.module.css";
 import PostCreator from "../PostCreator/PostCreator";
 import {useMessages} from "../../contexts/MessagesProvider";
+import {useUserInfo} from "../../contexts/UserProvider";
+import MessageComponent from "../MessageComponent/MessageComponent";
 
 const Messages = () => {
-    const {messagesData, deletePost} = useMessages()
+    const {messagesData} = useMessages()
+    const {user} = useUserInfo()
 
     return (
-        <main className='messages'>
-            <PostCreator/>
+        <main>
+            {user && <PostCreator/>}
             {
                 messagesData.map(message => {
                     return (
-                        <div className={classes.messageItem} key={message.id}>
-                            <p>{message.author}</p>
-                            <p>{message.date}</p>
-                            <p>{message.text}</p>
-                            <button onClick={() => deletePost(message.id)}>delete</button>
-                        </div>
+                        <NavLink className={classes.link} key={message.id} to={`${message.id}`}>
+                            <MessageComponent message={message} />
+                        </NavLink>
                     )
                 })
             }
