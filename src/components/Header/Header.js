@@ -3,15 +3,18 @@ import classes from './Header.module.css';
 import classNames from "classnames";
 import {HEADER_LINKS} from "../../helpers/constants";
 import {useUserInfo} from "../../contexts/UserProvider";
+import {useDispatch, useSelector} from "react-redux";
+import {removeUser, userSelector} from "../../redux/slices/userSlice";
 
 
 const Header = () => {
-    const {user, setUser} = useUserInfo()
+    const dispatch = useDispatch()
+    const user = useSelector(userSelector)
 
     const logOut = () => {
         sessionStorage.removeItem('user')
         localStorage.removeItem('user')
-        setUser(null)
+        dispatch(removeUser())
     }
 
     // JWT
@@ -40,7 +43,7 @@ const Header = () => {
             </ul>
             <div className={classes.headerInfo}>
                 {user && <input className={classes.link} type="button" onClick={logOut} value='logout'/>}
-                {user && <div className={classes.logo}>{user.name}</div>}
+                {user && <div className={classes.logo}>{user}</div>}
             </div>
         </header>
     )

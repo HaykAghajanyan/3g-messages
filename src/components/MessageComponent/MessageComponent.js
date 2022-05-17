@@ -1,11 +1,11 @@
 import classes from "./MessageComponent.module.css";
 import {useMessages} from "../../contexts/MessagesProvider";
-import {useUserInfo} from "../../contexts/UserProvider";
-import {useParams} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {userSelector} from "../../redux/slices/userSlice";
 
 const MessageComponent = ({message}) => {
     const {deletePost} = useMessages()
-    const {user} = useUserInfo()
+    const user = useSelector(userSelector)
     // const params = useParams()
     // console.log('params', params)
 

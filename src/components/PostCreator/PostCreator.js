@@ -1,11 +1,12 @@
 import classes from './PostCreator.module.css'
 import {useState} from "react";
 import {useMessages} from "../../contexts/MessagesProvider";
-import {useUserInfo} from "../../contexts/UserProvider";
+import {useSelector} from "react-redux";
+import {userSelector} from "../../redux/slices/userSlice";
 
 const PostCreator = () => {
     const [postText, setPostText] = useState('')
-    const {user} = useUserInfo()
+    const user = useSelector(userSelector)
 
     const {sendPost} = useMessages()
 

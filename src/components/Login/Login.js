@@ -6,14 +6,15 @@ import {useState} from "react";
 import axios from "axios";
 import {baseUrl} from "../../api/api";
 import {useNavigate} from "react-router-dom";
-import {useUserInfo} from "../../contexts/UserProvider";
+import {useDispatch} from "react-redux";
+import {setUser} from "../../redux/slices/userSlice";
 
 const [, REGISTRATION] = ACTIVE_ROUTES
 
 const Login = () => {
     const [isAuthFailed, setIsAuthFailed] = useState(false)
     const {setActiveRoute} = useAuthRoute()
-    const {setUser} = useUserInfo()
+    const dispatch = useDispatch()
     const {register, handleSubmit, formState: {errors}} = useForm()
 
     const navigate = useNavigate()
@@ -23,14 +24,12 @@ const Login = () => {
             .then(res => {
                 const user = res.data.find(user => user.name === data.login && user.password === data.password)
                 if (user) {
-                    const userObj = {name: user.name, password: user.password}
-
                     if(data.save) {
                         localStorage.setItem('user', user.name)
                     } else {
                         sessionStorage.setItem('user', user.name)
                     }
-                    setUser(userObj)
+                    dispatch(setUser(data.login))
                     navigate('../messages')
                 } else {
                     setIsAuthFailed(true)
