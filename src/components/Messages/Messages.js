@@ -1,13 +1,15 @@
 import classes from "./Messages.module.css";
 import PostCreator from "../PostCreator/PostCreator";
 import {useMessages} from "../../contexts/MessagesProvider";
+import {useUserInfo} from "../../contexts/UserProvider";
 
 const Messages = () => {
     const {messagesData, deletePost} = useMessages()
+    const {user} = useUserInfo()
 
     return (
         <main className='messages'>
-            <PostCreator/>
+            {user && <PostCreator/>}
             {
                 messagesData.map(message => {
                     return (
@@ -15,7 +17,8 @@ const Messages = () => {
                             <p>{message.author}</p>
                             <p>{message.date}</p>
                             <p>{message.text}</p>
-                            <button onClick={() => deletePost(message.id)}>delete</button>
+                            {user === message.author &&
+                            <button onClick={() => deletePost(message.id)}>delete</button>}
                         </div>
                     )
                 })

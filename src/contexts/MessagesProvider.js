@@ -20,7 +20,7 @@ const MessagesProvider = ({children}) => {
     }
 
     const sendPost = (text, author, date = '07.05.2022') => {
-        const id = `${author}${text.substr(0, 4)}`
+        const id = `${author}${text.substr(0, 4)}`.trim()
         const obj = {
             author, date, text, id
         }

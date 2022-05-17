@@ -2,15 +2,23 @@
   "users": [
     {
       "id": "1",
-      "name": "Hayk"
+      "name": "Hayk",
+      "password": "1111"
     },
     {
       "id": "2",
-      "name": "Karen"
+      "name": "Karen",
+      "password": "2222"
     },
     {
       "id": "3",
-      "name": "Alex"
+      "name": "Alex",
+      "password": "3333"
+    },
+    {
+      "name": "Armen",
+      "password": "4444",
+      "id": "p7LzxJI"
     }
   ],
   "messages": [
@@ -91,6 +99,18 @@
       "date": "07.05.2022",
       "text": "ddssff",
       "id": "Karenddss"
+    },
+    {
+      "author": "Armen",
+      "date": "07.05.2022",
+      "text": "Hello guys, my first post!",
+      "id": "ArmenHell"
+    },
+    {
+      "author": "Armen",
+      "date": "15/05/2022",
+      "text": "Testing date",
+      "id": "ArmenTest"
     }
   ]
 }
