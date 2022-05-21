@@ -1,3 +1,4 @@
+import {Suspense} from 'react';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import {useRoutes} from "react-router-dom";
@@ -23,12 +24,15 @@ const App = () => {
     }
 
     return (
-        <div className="container">
-            <Header/>
-            <button onClick={getUsers}>fetch</button>
-            {routes}
-            <Footer/>
-        </div>
+        <Suspense fallback={<div className='portal'>...Loading</div>}>
+            <div className="container">
+                <Header/>
+                {/*<button onClick={getUsers}>fetch</button>*/}
+                {routes}
+                {/*<Footer/>*/}
+            </div>
+        </Suspense>
+
     );
 }
 

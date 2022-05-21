@@ -2,9 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 import {testExtraReducer} from "../thunks/testThunk";
 
 const initialState = {
-    user: localStorage.getItem('user') ||
-        sessionStorage.getItem('user') ||
-        null,
+    user: null,
     allUsers: []
 }
 
@@ -24,7 +22,7 @@ const userSlice = createSlice({
     }
 })
 
-export const userSelector = state => state.user.user
+export const userSelector = state => state.userReducer.user
 
 export const {setUser, removeUser} = userSlice.actions
 

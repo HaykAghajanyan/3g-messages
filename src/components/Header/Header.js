@@ -12,8 +12,6 @@ const Header = () => {
     const user = useSelector(userSelector)
 
     const logOut = () => {
-        sessionStorage.removeItem('user')
-        localStorage.removeItem('user')
         dispatch(removeUser())
     }
 

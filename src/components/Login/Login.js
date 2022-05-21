@@ -24,11 +24,11 @@ const Login = () => {
             .then(res => {
                 const user = res.data.find(user => user.name === data.login && user.password === data.password)
                 if (user) {
-                    if(data.save) {
-                        localStorage.setItem('user', user.name)
-                    } else {
-                        sessionStorage.setItem('user', user.name)
-                    }
+                    // if(data.save) {
+                    //     localStorage.setItem('user', user.name)
+                    // } else {
+                    //     sessionStorage.setItem('user', user.name)
+                    // }
                     dispatch(setUser(data.login))
                     navigate('../messages')
                 } else {

@@ -1,9 +1,10 @@
 import Messages from "../components/Messages/Messages";
-import AuthComponent from "../components/AuthComponent/AuthComponent";
+// import AuthComponent from "../components/AuthComponent/AuthComponent";
 import {Navigate} from "react-router-dom";
-import MessageComponent from "../components/MessageComponent/MessageComponent";
-import Test from "../components/test/Test";
+import Cats from "../components/Cats/Cats";
+import {lazy} from "react";
 
+const AuthComp = lazy(() => import('../components/AuthComponent/AuthComponent'))
 
 const MAIN_ROUTES = [
     {
@@ -18,7 +19,11 @@ const MAIN_ROUTES = [
     },
     {
         path: 'auth',
-        element: <AuthComponent/>
+        element: <AuthComp/>
+    },
+    {
+        path: 'cats',
+        element: <Cats/>
     },
 ]
 

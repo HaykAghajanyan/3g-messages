@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.item {
+    width: calc(33vw - 20px);
+    height: 45vh;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px rebeccapurple solid;
+}
