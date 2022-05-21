@@ -29,7 +29,7 @@ const App = () => {
                 <Header/>
                 {/*<button onClick={getUsers}>fetch</button>*/}
                 {routes}
-                {/*<Footer/>*/}
+                <Footer/>
             </div>
         </Suspense>
 
