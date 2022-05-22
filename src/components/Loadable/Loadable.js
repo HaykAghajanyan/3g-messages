@@ -28,7 +28,7 @@ const Loadable = ({src}) => {
                         [classes.cat_loaded]: isLoaded
                     })}
                     src={src}
-                    alt="#"
+                    alt="1"
                     ref={imageRef}
                 />
             }
