@@ -1,16 +1,27 @@
 import {NavLink} from "react-router-dom";
 import classNames from "classnames";
 import classes from "./Header.module.css";
-import {LINKS} from "../../helpers/constants";
+import {LANGUAGES, LINKS} from "../../helpers/constants";
 import {useUserInfo} from "../../contexts/UserProvider";
+import {useTranslate} from "../../contexts/LanguageProvider";
+import {useState} from "react";
 
 
 const Header = () => {
+    const [langOption, setLangOption] = useState(LANGUAGES[0])
+
     const {user, setUser} = useUserInfo()
     const logOut = () => {
         localStorage.removeItem('user')
         sessionStorage.removeItem('user')
         setUser(null)
+    }
+
+    const {t, changeLanguage} = useTranslate()
+
+    const handleChangeLang = e => {
+        setLangOption(e.target.value)
+        changeLanguage(e.target.value)
     }
 
     return (
@@ -28,7 +39,7 @@ const Header = () => {
                                         [classes.active]: isActive
                                     })}
                                     to={link.to}
-                                >{link.title}</NavLink>
+                                >{t(link.title)}</NavLink>
                             </li>
                         )
                     })
@@ -38,10 +49,15 @@ const Header = () => {
                 user && (
                     <div className={classes.headerInfo}>
                         <div className={classes.logo}>{user}</div>
-                        <button className={classes.link} onClick={logOut}>Log out</button>
+                        <button className={classes.link} onClick={logOut}>{t('logOut')}</button>
                     </div>
                 )
             }
+            <select value={langOption} onChange={handleChangeLang}>
+                <option value="AM">{t('armenian')}</option>
+                <option value="RU">{t('russian')}</option>
+                <option value="EN">{t('english')}</option>
+            </select>
         </header>
     )
 }

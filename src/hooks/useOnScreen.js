@@ -7,7 +7,7 @@ export const useOnScreen = (ref) => {
         const observer = new IntersectionObserver(([entry]) => {
             setIsIntersecting(entry.isIntersecting)
         }, {
-            threshold: 0.2
+            threshold: 0.2,
         })
 
         if(ref.current) {

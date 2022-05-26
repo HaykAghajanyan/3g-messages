@@ -2,17 +2,17 @@ export const LINKS = [
     {
         id: '1',
         to: 'messages',
-        title: 'Messages'
+        title: 'messages'
     },
     {
         id: '2',
         to: 'auth',
-        title: 'Auth'
+        title: 'auth'
     },
     {
         id: '3',
         to: 'cats',
-        title: 'Cats'
+        title: 'cats'
     },
 ]
 
@@ -41,3 +41,5 @@ export const IMAGES = [
     'https://images.unsplash.com/photo-1575733078755-44ecf8313af6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fGNhdHN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60',
     'https://images.unsplash.com/photo-1593096127838-4b789e89fa3f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDd8fGNhdHN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60',
 ]
+
+export const LANGUAGES = ['AM', 'RU', 'EN']
